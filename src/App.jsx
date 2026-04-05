@@ -123,7 +123,19 @@ export default function App() {
         return (
           <RiwayatKasus
             key="history"
-            onViewCase={(c) => navigateToAnalysis(c)}
+            onViewCase={(c) => {
+              navigateToVerdict({
+                status: c.status,
+                confidence: c.status === 'banding' ? 94.2 : c.status === 'recovery' ? 88.5 : 91.0,
+                formData: {
+                  namaUMKM: `${c.nama} — ${c.usaha}`,
+                  nominalKUR: c.nominal,
+                  avgQRIS: c.qrisAvg,
+                  slikStatus: c.slikStatus,
+                  slikDetail: c.catatan
+                }
+              })
+            }}
           />
         )
       default:
