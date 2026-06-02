@@ -5,6 +5,8 @@ import Dashboard from './pages/Dashboard'
 import AnalysisLab from './pages/AnalysisLab'
 import VerdictResult from './pages/VerdictResult'
 import RiwayatKasus from './pages/RiwayatKasus'
+import ReadinessCheck from './pages/ReadinessCheck'
+import AnalyticsPage from './pages/AnalyticsPage'
 
 const DUMMY_DATA = {
   namaUMKM: 'Ibu Sari — Warung Nasi Padang',
@@ -101,6 +103,13 @@ export default function App() {
 
   const renderPage = () => {
     switch (currentPage) {
+      case 'readiness':
+        return (
+          <ReadinessCheck
+            key="readiness"
+            onNewAudit={() => navigateToAnalysis()}
+          />
+        )
       case 'analysis':
         return (
           <AnalysisLab
@@ -138,6 +147,8 @@ export default function App() {
             }}
           />
         )
+      case 'analytics':
+        return <AnalyticsPage key="analytics" />
       default:
         return (
           <Dashboard

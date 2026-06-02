@@ -9,12 +9,16 @@ import {
   LogOut,
   Settings,
   HelpCircle,
+  ClipboardCheck,
+  BarChart2,
 } from 'lucide-react'
 
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { id: 'readiness', label: 'Cek Kesiapan Kredit', icon: ClipboardCheck },
   { id: 'analysis', label: 'Analysis Lab', icon: FlaskConical },
   { id: 'history', label: 'Riwayat Kasus', icon: History },
+  { id: 'analytics', label: 'Analitik Penolakan', icon: BarChart2 },
 ]
 
 const bottomItems = [
